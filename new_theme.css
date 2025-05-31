@@ -1,0 +1,292 @@
+@font-face {
+    font-family: "TwCenMT"; 
+    src: url("fonts/Tw\ Cen\ MT.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+  } 
+
+:root {
+    --primary-color: #4fc3f7;
+    --bg-color: #1e1e2f;
+    --text-color: #fff;
+    --secondary-text: #bbb;
+    --hover-color: #03a9f4;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #550000, #804000, #808000, #004000, #004040, #000080, #4b0082);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    font-family: "TwCenMT", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Анимация плавного переливания фона */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.logo {
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6);
+    margin-bottom: 30px;
+    transition: transform var(--transition-speed);
+}
+
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    animation: slideUp 1s ease forwards;
+}
+
+#search-box {
+    padding: 14px 22px;
+    width: 420px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: box-shadow var(--transition-speed);
+    font-family: "TwCenMT", sans-serif;
+}
+
+#search-box:focus {
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    color: #000;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-family: "TwCenMT", sans-serif;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.about {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px 30px;
+    width: 600px;
+    margin: 40px auto 20px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 2s ease;
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.widget-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.weather-widget {
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    max-width: 300px;
+    animation: fadeIn 1s ease;
+}
+
+.weather-widget:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.settings-icon:hover {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 0.8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.about-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 16px;
+    z-index: 1000;
+    transition: background-color 0.2s;
+}
+
+.about-button:hover {
+    background-color: #333;
+}
+
+.github-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #0073e6, #005bb5);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.github-button:hover {
+    background: linear-gradient(45deg, #005bb5, #0073e6);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.browser-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.button-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Переключатель темы - стили */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  /* Стиль самого переключателя */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Ползунок */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 28px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px; width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  /* Тёмная тема (по классу на <body>) */
+  body.dark {
+    background-color: #121212;
+    color: #eee;
+  }
+  
+  body.dark .logo,
+  body.dark .footer,
+  body.dark .about,
+  body.dark .weather-widget {
+    color: #eee;
+  }
+  
+  body.dark input,
+  body.dark button {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  

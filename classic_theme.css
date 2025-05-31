@@ -1,0 +1,211 @@
+:root {
+    --primary-color: #4fc3f7;
+    --bg-color: #1e1e2f;
+    --text-color: #fff;
+    --secondary-text: #bbb;
+    --hover-color: #03a9f4;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.logo {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    transition: transform var(--transition-speed);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    animation: slideUp 1s ease forwards;
+}
+
+#search-box {
+    padding: 14px 22px;
+    width: 420px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: box-shadow var(--transition-speed);
+}
+
+#search-box:focus {
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    color: #000;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+.about {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 20px 30px;
+    width: 600px;
+    margin: 40px auto 20px; /* Отодвигаем вниз */
+    backdrop-filter: blur(5px);
+    animation: fadeIn 2s ease;
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+/* Weather Widget */
+.widget-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Добавляем отступ снизу */
+}
+
+.weather-widget {
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    max-width: 300px;
+}
+
+/* Анимация при наведении */
+.weather-widget:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.settings-icon:hover {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 0.8;
+}
+
+
+/* Плавное появление */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.weather-widget {
+    animation: fadeIn 1s ease;
+}
+
+.footer {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.about-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 16px;
+    z-index: 1000;
+    transition: background-color 0.2s;
+  }
+  
+  .about-button:hover {
+    background-color: #333;
+  }
+
+  .github-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #0073e6, #005bb5);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .github-button:hover {
+    background: linear-gradient(45deg, #005bb5, #0073e6);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo {
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  .browser-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .button-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
